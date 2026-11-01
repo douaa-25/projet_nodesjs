@@ -1,0 +1,37 @@
+<div *ngIf="event">
+
+  <img [src]="event.image" width="99%">
+
+  <h1>{{ event.titre }}</h1>
+
+  <p>{{ event.descriptions }}</p>
+
+  <p>📅 {{ event.date_E | date:'yyyy-MM-dd' }}</p>
+
+  <p>📍 {{ event.lieu }}</p>
+
+  <button (click)="Reserver()">
+    🎟️ Réserver
+  </button>
+
+  <hr>
+
+  <div class="comment-section">
+
+  <h2>💬 Commentaires</h2>
+
+  <div *ngFor="let c of commentaires" class="comment-item">
+    <p>{{ c.contenu }}</p>
+    <div class="comment-date">
+      {{ c.dateC | date:'yyyy-MM-dd' }}
+    </div>
+  </div>
+
+  <div class="comment-form">
+    <textarea [(ngModel)]="nvComm" name="nvComm" placeholder="Écrire un commentaire..."></textarea>
+    <button (click)="AjouterCom()">Envoyer</button>
+  </div>
+
+</div>
+
+</div>

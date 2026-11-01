@@ -1,0 +1,9 @@
+<h2>Editer User</h2>
+    <label>Role :</label><input [(ngModel)]="compte.roles">&nbsp;
+    <label>Statut du compte:</label>
+    <select [(ngModel)]="compte.status_compte">
+        <option value="Activer">Activer</option>
+         <option value="Desactiver">Desactiver</option>
+    </select><br>
+    <button (click)="enregistrer()">💾 Enregistrer</button>
+

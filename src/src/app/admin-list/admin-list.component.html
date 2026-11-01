@@ -1,0 +1,112 @@
+<h1>Liste des comptes</h1>
+
+<div >
+  <h2>Utilisateurs de platforme</h2>
+<table border="1">
+  <tr>
+    <th>Identification</th>
+    <th>Role</th>
+    <th>Statut</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let i of comptes">
+    <td>{{ i.id }}</td>
+    <td>{{ i.roles }}</td>
+    <td>{{ i.status_compte }}</td>
+  <td>
+
+    <a class="cree" [routerLink]="['/users', i.id, 'mod']">🖋️ Modifier</a>
+    <button (click)="suppCompte(i.id)">🗑️ Supprimer</button>
+    <button (click)="desactCompte(i.id)">❌ Désactiver</button>
+  </td>
+  </tr>
+  </table>
+  </div> <br>
+
+<div >
+  <h2>Les evenement Organisés</h2>
+  <table border="1">
+    <tr>
+      <th>Identification</th>
+      <th>titre</th>
+      <th>description</th>
+      <th>date</th>
+      <th>lieu</th>
+      <th>prix de billets</th>
+      <th>Statut</th>
+    </tr>
+
+    <tr *ngFor="let e of events">
+      <td>{{ e.idEvent }}</td>
+      <td>{{ e.titre }}</td>
+      <td>{{ e.descriptions }}</td>
+      <td>{{ e.date_E | date:'dd/MM/yyyy' }}</td>
+      <td>{{ e.lieu }}</td>
+      <td>{{e.prix_Billet}}</td>
+      <td>{{ e.statut }}</td>
+      <td>
+        <select class="cree" (change)="changer(e.idEvent, s.value)" #s>
+          <option value="En attend">En attente</option>
+          <option value="Accepté">Accepté</option>
+          <option value="Non Accepté">Non Accepté</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+
+  <div>
+
+  <h2>Liste des commentaires</h2>
+
+  <table border="1">
+
+    <tr>
+      <th>ID</th>
+      <th>Participant</th>
+      <th>Event</th>
+      <th>Contenu</th>
+      <th>Date</th>
+      <th>Action</th>
+    </tr>
+
+    <tr *ngFor="let c of commentaires">
+
+      <td>{{ c.codeCom }}</td>
+      <td>{{ c.idPar }}</td>
+      <td>{{ c.idEvent }}</td>
+      <td>{{ c.contenu }}</td>
+      <td>{{ c.dateC | date:'dd/MM/yyyy' }}</td>
+
+      <td>
+        <button (click)="suppComm(c.codeCom)">
+          🗑️ Supprimer
+        </button>
+      </td>
+    </tr>
+  </table>
+
+  <h2>Catégories</h2>
+
+  <input [(ngModel)]="nvCat" placeholder="Nouvelle catégorie">
+  <button (click)="ajouterCat()">Ajouter</button>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let c of categories">
+    <td>{{ c.codeC }}</td>
+    <td>{{ c.nomCat }}</td>
+    <td>
+      <button (click)="deleteCat(c.codeC)">🗑️ Supprimer</button>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+</div>

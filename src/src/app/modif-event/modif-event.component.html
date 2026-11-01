@@ -1,0 +1,21 @@
+<h1>Modifier un evenement</h1>
+
+<form #f="ngForm" (ngSubmit)="enregistrer()">
+        <label>Titre :</label>
+            <input type="text" [(ngModel)]="event.titre" name="titre" required><br>
+        <label>Description :</label>
+            <input type="text" [(ngModel)]="event.descriptions" name="descriptions" required><br>
+        <label>Date Evenement :</label>
+            <input type="date" [(ngModel)]="event.date_E" name="date_E" required><br>
+        <label>Lieu :</label>
+            <input type="lieu" [(ngModel)]="event.lieu" name="lieu" required> <br>
+        <label>Prix Billets :</label>
+            <input type="number" [(ngModel)]="event.prix_Billet" name="prix_Billet" required> <br>
+        <label>Image :</label>
+            <input type="text" [(ngModel)]="event.image" name="image" required> <br>
+        <label>Choisir une categorie :</label>
+        <select [(ngModel)]="event.codeC" name="codeC">
+            <option *ngFor="let c of cat" [value]="c.codeC">{{ c.nomCat }}</option>
+        </select><br>
+        <button type="submit">💾 Enregistrer</button>
+</form>

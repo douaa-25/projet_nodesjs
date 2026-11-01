@@ -1,0 +1,11 @@
+<label>Nombre de places :</label>
+
+<input type="number" [(ngModel)]="reservation.nbPlace" (input)="calculPrix()" min="1">
+
+<p>🎟️ Prix billet: {{ event.prix_Billet }} DT</p>
+
+<p>💰 Prix total: {{ prixTotal }} DT</p>
+
+<button (click)="ajouterReservation()">
+  Confirmer Reservation
+</button>

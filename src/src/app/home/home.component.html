@@ -1,0 +1,24 @@
+<section>
+    <div>
+        <img src="assets/eventTunis.jpg">
+        <img src="assets/eventTunis2.jpg">
+        <img src="assets/eventTunis3.jpg">
+        <img src="assets/film1.jpg">
+        <img src="assets/film2.jpg">
+        <img src="assets/film3.jpg">
+        <img src="assets/film4.jpg">
+        <img src="assets/sport.avif">
+    </div>
+
+    <div *ngFor="let c of categories">
+    <h1>{{ c.nomCat }}</h1>
+
+    <div *ngFor="let e of events">
+        <a *ngIf="e.codeC == c.codeC" [routerLink]="['/event', e.idEvent]">
+            <img [src]="e.image">
+        </a>
+    </div>
+
+    </div>
+
+</section>

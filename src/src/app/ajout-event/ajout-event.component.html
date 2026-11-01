@@ -1,0 +1,53 @@
+    <h1>Creer votre nouvelle evenement</h1>
+    <form #f="ngForm" (ngSubmit)="ajouter()">
+        <label>Titre :</label>
+            <input type="text" [(ngModel)]="titre" name="titre" required><br>
+        <label>Description :</label>
+            <input type="text" [(ngModel)]="descriptions" name="descriptions" required><br>
+        <label>Date Evenement :</label>
+            <input type="date" [(ngModel)]="date_E" name="date_E" required><br>
+        <label>Lieu :</label>
+            <input type="lieu" [(ngModel)]="lieu" name="lieu" required> <br>
+        <label>Prix de Billets :</label>
+            <input type="number" [(ngModel)]="prix_Billet" name="prix_Billet" required> <br>
+        <label>Image :</label>
+            <input type="text" [(ngModel)]="image" name="image" required> <br>
+        <label>Choisir une categorie :</label>
+        <select [(ngModel)]="codeC" name="codeC">
+            <option *ngFor="let c of cat" [value]="c.codeC">{{ c.nomCat }}</option>
+        </select><br>
+        <button type="submit">💾 Enregistrer</button>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h1>Bienvenu, creer votre nouvelle evenement</h1>
+
+<label>Titre :</label><input type="text" [(ngModel)]="event.titre">
+<label>Description :</label><input type="text" [(ngModel)]="event.descriptions">
+<label>Date Evenement :</label><input type="date" [(ngModel)]="event.date_E">
+<label>Lieu :</label><input type="text" [(ngModel)]="event.lieu">
+<label>Image :</label><input [(ngModel)]="event.image">
+<label>Choisir une categorie :</label>
+<select [(ngModel)]="event.codeC">
+    <option *ngFor="let c of cat" [value]="c.codeC">{{ c.nomCat }}</option>
+</select>
+    <button (click)="enregistrer()">💾 Enregistrer</button>-->
+
+

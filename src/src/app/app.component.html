@@ -1,0 +1,47 @@
+<header>
+  <div>
+    <a routerLink=""><img src="assets/logo2.png"></a>
+    <p>📞+216 55 704 335 📞+216 55 704 335</p>
+    <ul>
+      <li><a routerLink="">Accueil</a></li>
+      <li><a [routerLink]="['/login']">Se connecter</a></li>
+      <li><a [routerLink] ="['/inscription']">Créer un compte</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <input type="text" placeholder="🔎">
+  </div>
+
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <div>
+    <h3>Besoin d'aide ?</h3>
+    <p>👥 +216 55 704 335 </p>
+    <p>👥 +216 55 704 335</p>
+    <a href="mailto:saranefzi18@gmail.com">📧 contactevent.tn</a>
+    <fieldset>
+      <legend>Paiements sécurisés</legend>
+    </fieldset>
+  </div>
+  <div>
+    <h3>A PROPOS</h3>
+    <a routerLink="/apropos">A propos</a><br>
+    <a routerLink="/listeGuiche">La liste de nos guiches</a><br>
+    <a routerLink="/contact">Cintacter nous</a>
+  </div>
+  <div>
+    <h3>Catégories</h3>
+    <a routerLink=""> Théâtre</a><br>
+    <a routerLink="">Éducation & Formations</a><br>
+    <a routerLink="">Sport</a><br>
+    <a routerLink="">Spectacle</a><br>
+    <a routerLink="">Culture & Art</a><br>
+    <a routerLink="">Cenema</a>
+  </div>
+</footer>

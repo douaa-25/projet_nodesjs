@@ -1,0 +1,16 @@
+<div class="div-form">
+  <h1>Connexion</h1>
+
+  <label>Email</label>
+  <input type="email" [(ngModel)]="email" required><br>
+
+  <label>Mot de passe</label>
+  <input type="password" [(ngModel)]="password" required><br>
+
+  <button (click)="login()">SE CONNECTER</button>
+
+  <p class="red">{{ message }}</p>
+    
+  <p>Vous n'avez pas de compte ? </p>
+  <a routerLink="/inscription">S'inscrire</a> 
+</div>
