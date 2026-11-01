@@ -1,0 +1,15 @@
+<body>
+  <h2>Catalogue des applications</h2>
+
+  <div *ngFor="let app of apps">
+    <h3>{{ app.title }}</h3>
+    <label class="text"><b>Category :</b></label>
+    <p class="text">{{ app.category }}</p><br>
+    <label class="text"><b>Unit concerned :</b></label>
+    <p class="text">{{ app.units }}</p><br>
+    <label class="text"><b>Active users :</b></label>
+    <p class="text"> {{ app.activeUsers }}</p><br>
+    <a class="text" [routerLink]="['/apps', app.id]">Details</a>
+    <hr>
+  </div>
+</body>

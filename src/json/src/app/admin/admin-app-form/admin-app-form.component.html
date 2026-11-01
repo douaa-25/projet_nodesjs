@@ -1,0 +1,17 @@
+<h2>{{ isEdit ? 'Edit' : 'Add' }} Application</h2>
+
+    <input [(ngModel)]="app.code" placeholder="Code">&nbsp;
+    <input [(ngModel)]="app.title" placeholder="Title"><br>
+    <input [(ngModel)]="app.category" placeholder="Category"><br>
+    <textarea [(ngModel)]="app.description" placeholder="Description"></textarea><br>
+    <input [(ngModel)]="app.accessUrl" placeholder="URL"><br>
+    <input [(ngModel)]="app.units" placeholder="Units"><br>
+    <input [(ngModel)]="app.activeUsers" placeholder="active users"><br>
+    <input [(ngModel)]="app.audience" placeholder="audience"><br>
+    <input [(ngModel)]="app.supportContact" placeholder="Support Contact"><br>
+    <input [(ngModel)]="app.developedBy" placeholder="Developed by"><br>
+    <input [(ngModel)]="app.maintainedBy" placeholder="Maintained by"><br>
+    <input [(ngModel)]="app.ownerBusiness" placeholder="Owner Business"><br>
+    <input [(ngModel)]="app.ownerTechnical" placeholder="Owner Technical"><br>
+
+    <button (click)="save()">💾 Save</button>

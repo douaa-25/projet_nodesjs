@@ -1,0 +1,17 @@
+<body>
+  <h2>{{ app.title }}</h2>
+
+  <p class="text">{{ app.description }}</p>
+  <p class="text"><b>Developed by :</b>{{ app.developedBy }}</p>
+  <p class="text"><b>Maintained by : </b>{{ app.maintainedBy }}</p>
+  <p class="text"><b>Support : </b>{{ app.supportContact }}</p>
+
+  <a [href]="app.accessUrl" target="_blank">Access the application</a><br>
+
+  <h3>Documents</h3>
+  <ul>
+    <li *ngFor="let d of docs">
+      <a class="text" [href]="d.url" target="_blank">{{ d.title }}</a>
+    </li>
+  </ul>
+</body>

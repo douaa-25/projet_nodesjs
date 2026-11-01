@@ -1,0 +1,50 @@
+<button (click)="logout()"> Log out</button>
+<div>
+  <h2>Admin – Applications</h2>
+
+<a class="add-btn" routerLink="/admin/apps/new">✚ New Application</a> 
+<div class="table-wrapper">
+<table border="1">
+  <tr>
+    <th>Code</th>
+    <th>Title</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>URL</th>
+    <th>Units</th>
+    <th>Active Users</th>
+    <th>Audience</th>
+    <th>Support</th>
+    <th>Develop by</th>
+    <th>Maintain by</th>
+    <th>Owner Business</th>
+    <th>Owner Technical</th>
+    <th>Statut</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor="let app of apps">
+    <td>{{ app.code }}</td>
+    <td>{{ app.title }}</td>
+    <td>{{ app.category }}</td>
+    <td>{{ app.description }}</td>
+    <td>{{ app.accessUrl }}</td>
+    <td>{{ app.units }}</td>
+    <td>{{ app.activeUsers }}</td>
+    <td>{{ app.audience }}</td>
+    <td>{{ app.supportContact }}</td>
+    <td>{{ app.developedBy }}</td>
+    <td>{{ app.maintainedBy }}</td>
+    <td>{{ app.ownerBusiness }}</td>
+    <td>{{ app.ownerTechnical }}</td>
+    <td>{{ app.status }}</td>
+  <td>
+    <a class="add-btn" [routerLink]="['/admin/apps', app.id, 'edit']">🖍 Edit</a><br>
+    <a class="add-btn" [routerLink]="['/admin/apps', app.id, 'docs']">🗐 Generate documents </a> 
+    <button (click)="disableApp(app.id)">✖ Disable</button>
+    <button (click)="ActiveApp(app.id)">✔ Active</button>
+  </td>
+  </tr>
+  </table>
+  </div> 
+</div>

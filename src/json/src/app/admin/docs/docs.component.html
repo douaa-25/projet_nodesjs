@@ -1,0 +1,59 @@
+<body>
+  <h2>Edit / Delete Documents</h2>
+
+  <table border="1" *ngIf="doc.length > 0">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>URL</th>
+        <th>Type</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let d of doc">
+        <td>
+          <input [(ngModel)]="d.title">
+        </td>
+
+        <td>
+          <input [(ngModel)]="d.url">
+        </td>
+
+        <td>
+          <select [(ngModel)]="d.type">
+            <option value="PDF">PDF</option>
+            <option value="LINK">LINK</option>
+            <option value="PAGE">PAGE</option>
+          </select>
+        </td>
+
+        <td>
+          <button (click)="updateDoc(d)">⛉ Save</button>
+          <button (click)="deleteDoc(d.id)">⦸ Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="doc.length === 0">
+    ⚠︎ No documents for this application
+  </p>
+
+  <hr>
+
+  <h2>Add Document</h2>
+
+  <input class="text" [(ngModel)]="docs.title" placeholder="Title"><br><br>
+  <input class="text" [(ngModel)]="docs.url" placeholder="URL"><br><br>
+
+  <select [(ngModel)]="docs.type">
+    <option value="PDF">PDF</option>
+    <option value="LINK">LINK</option>
+    <option value="PAGE">PAGE</option>
+  </select><br><br>
+
+  <button (click)="addDoc()">✚ Add</button>
+
+</body>

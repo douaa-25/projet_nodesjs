@@ -1,0 +1,14 @@
+<body>
+    <div>
+    <h2>Admin Login</h2>
+
+    <form (ngSubmit)="login()">
+        <input class="text" [(ngModel)]="username" placeholder="Username" name="username"><br>
+        <input class="text" [(ngModel)]="password" type="password" placeholder="Password" name="password">
+        <br>
+        <button type="submit">Login</button>
+    </form>
+
+    <p class="red">{{ message }}</p>
+</div>
+</body>
